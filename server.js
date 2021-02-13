@@ -32,7 +32,7 @@ io.on('connection', socket => {
 		// Emits message to all clients to pingback their name to the server
 		const disconnectedUserObj = users.find(user => user.id === socket.conn.id);
 		const disconnectedUserIdx = users.indexOf(disconnectedUserObj);
-		io.emit('discyonnectedUser', users[disconnectedUserIdx].name); 
+		io.emit('disconnectedUser', users[disconnectedUserIdx].name); 
 		users.splice(disconnectedUserIdx, 1);
 	});
 
