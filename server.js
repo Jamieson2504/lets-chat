@@ -32,7 +32,7 @@ io.on('connection', socket => {
 		// Emits message to all clients to pingback their name to the server
 		const disconnectedUserObj = users.find(user => user.id === socket.conn.id);
 		const disconnectedUserIdx = users.indexOf(disconnectedUserObj);
-		io.emit('disconnectedUser', users[disconnectedUserIdx].name); 
+		io.emit('discyonnectedUser', users[disconnectedUserIdx].name); 
 		users.splice(disconnectedUserIdx, 1);
 	});
 
@@ -40,7 +40,7 @@ io.on('connection', socket => {
 })
 
 // Starts server
-const PORT = 3000;
+const PORT = process.env.PORT;
 http.listen(PORT, () => {
 	console.log(`running on ${PORT}`);
 });
