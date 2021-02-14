@@ -12,6 +12,10 @@ const users = [];
 
 // Run when client visits front-end page
 io.on('connection', socket => {
+
+	// assuming io is the Socket.IO server object – Fix for 503 errors crashing on Heroku
+	io.set("transports", ["xhr-polling"]);
+  	io.set("polling duration", 10);
 	
 	//When we recieve a join event from client
 	socket.on('join', (name) => {
@@ -39,11 +43,6 @@ io.on('connection', socket => {
 
 });
 
-// assuming io is the Socket.IO server object – Fix for 503 errors crashing on Heroku
-io.configure(function () { 
-	io.set("transports", ["xhr-polling"]); 
-	io.set("polling duration", 10); 
-});
 
 // Starts server
 const PORT = process.env.PORT || 8000;
