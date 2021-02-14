@@ -36,10 +36,10 @@ socket.on('message', (obj) => {
 	div.classList.add('message', 'bg-purple-100', 'my-2', 'rounded-md', 'p-3');
 	div.innerHTML = `
 		<div class="flex mb-1 items-center space-x-2">
-			<p class="name">${obj.name}</p>
+			<p class="name text-xs sm:text-small">${obj.name}</p>
 			<p class="time text-xs text-purple-500">${obj.time}</p>
 		</div>
-		<p class="message-body text-base">${obj.message}</p>
+		<p class="message-body text-small sm:text-base">${obj.message}</p>
 	`;
 	messagesEl.appendChild(div);
 
