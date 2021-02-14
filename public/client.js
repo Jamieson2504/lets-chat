@@ -35,9 +35,9 @@ socket.on('message', (obj) => {
 	const div = document.createElement('div');
 	div.classList.add('message', 'bg-purple-100', 'my-2', 'rounded-md', 'p-3');
 	div.innerHTML = `
-		<div class="flex mb-1 items-center space-x-2">
-			<p class="name text-xs sm:text-small">${obj.name}</p>
-			<p class="time text-xs text-purple-500">${obj.time}</p>
+		<div class="flex flex-wrap items-center space-x-2">
+			<p class="name text-xs sm:text-small mb-1">${obj.name}</p>
+			<p class="time text-xs text-purple-500 mb-1">${obj.time}</p>
 		</div>
 		<p class="message-body text-small sm:text-base">${obj.message}</p>
 	`;
